@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmCare | Livestock Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <div style="font-size: 2rem;">🐄</div>
+            <div>
+                <h1>FarmCare Livestock Hub</h1>
+                <p>Track animal health, feeding schedules, vaccinations and farm reports in one dashboard.</p>
+            </div>
+        </div>
+        <div class="badge">Next feeding reminder in <span id="nextReminder">—</span></div>
+    </header>
+
+    <div id="app">
+        <nav class="side-nav">
+            <h2>Navigation</h2>
+            <a href="#animals">Animals</a>
+            <a href="#feeding">Feeding Schedule</a>
+            <a href="#vaccination">Vaccination</a>
+            <a href="#reports">Reports</a>
+            <a href="#reminders">Reminders</a>
+        </nav>
+
+        <main>
+            <section id="animals" class="section">
+                <header>
+                    <h2>Animal Profiles</h2>
+                    <span class="label">Farm total: <span id="animalTotal">0</span></span>
+                </header>
+                <div id="animalCards" class="grid-2"></div>
+            </section>
+
+            <section id="feeding" class="section">
+                <header>
+                    <h2>Feeding Schedule</h2>
+                    <button class="secondary" id="refreshFeeding">Refresh Schedule</button>
+                </header>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Animal</th>
+                                <th>Next Feed</th>
+                                <th>Feed Type</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="feedingTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="vaccination" class="section">
+                <header>
+                    <h2>Vaccination Tracking</h2>
+                    <button class="secondary" id="refreshVaccines">Refresh Vaccines</button>
+                </header>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Animal</th>
+                                <th>Vaccine</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vaccineTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="reports" class="section">
+                <header>
+                    <h2>Reports & Statistics</h2>
+                </header>
+                <div class="stats">
+                    <div class="stat">
+                        <h3>Total animals</h3>
+                        <strong id="statTotal">0</strong>
+                    </div>
+                    <div class="stat">
+                        <h3>Healthy animals</h3>
+                        <strong id="statHealthy">0</strong>
+                    </div>
+                    <div class="stat">
+                        <h3>Feedings due</h3>
+                        <strong id="statDueFeed">0</strong>
+                    </div>
+                    <div class="stat">
+                        <h3>Vaccines due</h3>
+                        <strong id="statDueVax">0</strong>
+                    </div>
+                </div>
+                <div id="reportSummary" class="reminders" style="margin-top: 24px;"></div>
+            </section>
+
+            <section id="reminders" class="section">
+                <header>
+                    <h2>Active Reminders</h2>
+                </header>
+                <div id="reminderList" class="reminders"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
